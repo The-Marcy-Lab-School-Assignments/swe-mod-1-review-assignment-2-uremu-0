@@ -6,6 +6,10 @@ const bookInventory = {
   "Between the World and Me": 1
 };
 
+for (const key of Object.keys(bookInventory)) {
+  const value = bookInventory[key];
+  console.log(`${key}:`, `${value} copies available`);
+}
 // Part A: Use Object.keys() and a for loop to print each book and its availability in this format:
 // "The Bluest Eye: 3 copies available"
 // "Beloved: 5 copies available"

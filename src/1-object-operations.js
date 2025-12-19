@@ -14,4 +14,6 @@ cart.items = ['apples', 'bananas', 'cherries']
 cart.totalPrice = 99.99
 cart.itemCount = 3
 
+delete cart.customerName // deleted 
+
 console.log(cart)
