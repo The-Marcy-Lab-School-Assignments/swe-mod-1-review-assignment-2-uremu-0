@@ -22,20 +22,22 @@ console.log(playlist1.songCount);
 
 Part A: What will be logged to the console? Why?
 
+The value logged to the console will be 15. This happens because objects in JavaScript are reference types, so playlist2 does not create a copy, it points to the same object in memory as playlist1. When playlist2.songCount is updated, it also updates playlist1.songCount.
+
 Part B: How would you modify the code so that reassigning `playlist2.songCount` does NOT affect `playlist1`.songCount? Write the corrected code below your response (we've provided the broken code again for you to fix).
 
 ### Response 1
 
-Your response...
+To prevent this,a true copy of playlist1 needs to be created so that changes to playlist2 do not affect it. This can be done using the spread operator, which creates a new object in memory.
 
 **Corrected Code:**
 
 ```js
 // fix this!
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = { ...playlist1 };
 playlist2.songCount = 15;
-console.log(playlist1.songCount);
+console.log(playlist1.songCount); // 10
 ```
 
 ---
@@ -61,6 +63,10 @@ For each task below, identify which array method (forEach, filter, map, find, or
 ### Response 2
 
 Your response...
+	1.	I would use filter because it creates a new array containing only elements that meet a condition.
+	2.	I would use find to locate the student named “Destiny” so I can update her grade directly.
+	3.	I would use reduce because it allows me to combine all grades into a single value to calculate the average.
+	4.	I would use map to transform each student object into a formatted string like "Maya: 92".
 
 ---
 
@@ -82,7 +88,7 @@ console.log(upperCaseLetters);
 
 ### Response 3
 
-Your response...
+The error occurs because capitalize is being invoked immediately instead of being passed as a callback to map. This causes capitalize to run with undefined, leading to the toUpperCase error. To fix this, we should pass the function reference without parentheses: letters.map(capitalize). To avoid this error in the future, always remember that array methods expect a function reference, not the result of calling a function
 
 ---
 
@@ -112,3 +118,12 @@ const grandTotal = orders.reduce((sum, order) => {
 ### Response 4
 
 Your response...
+
+Part A:
+grandTotal will equal 135 after the code runs.
+
+Part B:
+The 0 is the initial value of the accumulator (sum). It is important because it ensures the reduction starts with a known value and prevents unexpected behavior.
+
+Part C:
+In the first iteration, sum is 0 and order is { id: 1, total: 45 }. The function returns 0 + 45, so sum becomes 45 for the next iteration.

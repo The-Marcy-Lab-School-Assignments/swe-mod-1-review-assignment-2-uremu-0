@@ -8,15 +8,19 @@ const songs = [
 ];
 
 // A: Use filter to create a new array called `hitSongs` containing only songs with more than 3 million streams.
-const hitSongs = undefined;
+const hitSongs = songs.filter(song => song.streams > 3000000);
 
 // B: Use map to create an array called `songTitles` containing just the titles of all songs.
-const songTitles = undefined;
+const songTitles = songs.map(song => song.title);
 
 // C: Use find to locate the song "Calm Down" and store it in a variable called `calmDown`.
-const calmDown = undefined;
+const calmDown = songs.find(song => song.title === "Calm Down");
 
 // D: Use forEach to log each song in this format:
-// "Essence by Wizkid - 2500000 streams"
-// "Peru by Fireboy DML - 1800000 streams"
-// etc...
+
+Essence by Wizkid - 2500000 streams
+Peru by Fireboy DML - 1800000 streams
+Last Last by Burna Boy - 3200000 streams
+Calm Down by Rema - 4100000 streams
+Love Nwantiti by CKay - 3800000 streams
+Buga by Kizz Daniel - 2100000 streams
