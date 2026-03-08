@@ -17,10 +17,6 @@ const songTitles = songs.map(song => song.title);
 const calmDown = songs.find(song => song.title === "Calm Down");
 
 // D: Use forEach to log each song in this format:
-
-Essence by Wizkid - 2500000 streams
-Peru by Fireboy DML - 1800000 streams
-Last Last by Burna Boy - 3200000 streams
-Calm Down by Rema - 4100000 streams
-Love Nwantiti by CKay - 3800000 streams
-Buga by Kizz Daniel - 2100000 streams
+songs.forEach(song => {
+  console.log(`${song.title} by ${song.artist} - ${song.streams} streams`);
+});
